@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#editor {
+    flex-grow: 1;
+}
+
+.bottom-panel {
+    display: flex;
+    padding: 10px;
+    background: #f5f5f5;
+    border-top: 1px solid #ddd;
+    gap: 10px;
+    height: 52px;
+    align-items: center;
+}
+
+.filter-input {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex: 1;
+    min-width: 0;
+    height: 32px;
+}
+
+.this-prefix {
+    height: 32px;
+    padding: 0 8px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.filter-input input {
+    height: 32px;
+    padding: 0 12px;
+    border: 1px solid #ddd;
+    border-radius: 0 4px 4px 0;
+    font-size: 14px;
+    flex: 1;
+    min-width: 200px;
+    font-family: monospace;
+}
+
+.filter-input button {
+    height: 32px;
+    width: 32px;
+    padding: 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.filter-input button:hover {
+    background: #f0f0f0;
+}
+
+.toolbar {
+    display: flex;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.toolbar button {
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.toolbar button:hover {
+    background: #f0f0f0;
+}
+
+.editor-container {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    position: relative;
+    background: #ffffff;
+    height: calc(100vh - 60px);
+}
+
+.editor-panel {
+    flex: 1;
+    position: relative;
+    min-width: 200px;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.editor-divider {
+    width: 4px;
+    background: #ddd;
+    cursor: col-resize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    z-index: 10;
+}
+
+.editor-divider:hover {
+    background: #999;
+}
+
+.monaco-editor {
+    height: 100% !important;
+}
+
+#outputEditor.hidden,
+.editor-divider.hidden {
+    display: none;
+}
+
+#sourceEditor.full-width {
+    flex: 1 1 100% !important;
+}
+
+.filter-input-container {
+    position: relative;
+    flex: 1;
+    display: flex;
+    min-width: 150px;
+    height: 32px;
+}
+
+.filter-input-container .monaco-editor {
+    border: 1px solid #ddd;
+    border-radius: 0 4px 4px 0;
+    margin-left: -1px;
+    width: 100% !important;
+}
+
+.filter-input-container .monaco-editor .overflow-guard {
+    border-radius: 0 4px 4px 0;
+    width: 100% !important;
+}
+
+/* Adjust the height of the editor container */
+.filter-input-container {
+    height: 32px;
+}
+
+/* Hide scrollbars */
+.filter-input-container .monaco-editor .scrollbar {
+    display: none !important;
+} 

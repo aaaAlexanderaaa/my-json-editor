@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" data-name="vs/editor/editor.main" href="../node_modules/monaco-editor/min/vs/editor/editor.main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="editor-container">
+            <div id="sourceEditor" class="editor-panel"></div>
+            <div class="editor-divider"></div>
+            <div id="outputEditor" class="editor-panel"></div>
+        </div>
+        <div class="bottom-panel">
+            <div class="filter-input">
+                <span class="this-prefix">this</span>
+                <div class="filter-input-container">
+                    <input type="text" id="filterInput" placeholder="e.g. [0] or .filter(x=>x.a>1)" style="flex: 1;">
+                </div>
+                <button title="Apply Filter" onclick="window.applyFilter()">🔍</button>
+            </div>
+            <div class="toolbar">
+                <button title="Format JSON" onclick="window.formatJson()">⚡</button>
+                <button title="Toggle Fold/Unfold" onclick="window.expandAll()">🔽</button>
+                <button title="Copy as One Line" onclick="window.compressAndCopy()">📋</button>
+                <button title="Convert to XML" onclick="window.convertToXml()">🔄</button>
+                <button title="Convert to TypeScript" onclick="window.convertToTypeScript()">📜</button>
+                <button title="Load JSON File" onclick="window.loadJsonFile()">📂</button>
+            </div>
+        </div>
+    </div>
+    <script>var require = { paths: { 'vs': '../node_modules/monaco-editor/min/vs' } };</script>
+    <script src="../node_modules/monaco-editor/min/vs/loader.js"></script>
+    <script src="../node_modules/monaco-editor/min/vs/editor/editor.main.nls.js"></script>
+    <script src="../node_modules/monaco-editor/min/vs/editor/editor.main.js"></script>
+    <script src="renderer.js"></script>
+</body>
+</html> 
